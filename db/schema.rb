@@ -10,6 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 1) do
+ActiveRecord::Schema.define(version: 2022_10_17_153737) do
+
+  create_table "instructors", force: :cascade do |t|
+    t.string "name"
+    t.string "course"
+    t.string "classroom"
+  end
+
+  create_table "student_instructors", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "instructor_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name", limit: 200
+    t.integer "age"
+    t.string "grade"
+    t.string "major"
+  end
 
 end
